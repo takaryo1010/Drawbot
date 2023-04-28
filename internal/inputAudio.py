@@ -49,7 +49,7 @@ def InputAudio(reqAudio):
     while stream.is_active():
         if key.is_pressed("enter"):  # エンターキーが押されたらbreak
             break
-        
+
         if key.is_pressed("space"):
             reqAudio.isInput = True
         else:
@@ -60,4 +60,4 @@ def InputAudio(reqAudio):
     stream.close()
     audio.terminate()
 
-    return reqAudio.List_inputs
+    return ':'.join(reqAudio.List_inputs)
