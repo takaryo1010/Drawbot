@@ -1,2 +1,3 @@
 openAI_KEY
+openAI_orgID
 DeepL_KEY
