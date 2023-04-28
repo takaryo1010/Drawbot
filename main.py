@@ -5,10 +5,12 @@ from internal import inputAudio
 
 
 def main():
+    with open("")
+    
+    
     reqAudio = inputAudio.RequestAudio()  # インスタンスを生成
-
     inputAudio.InputAudio(reqAudio)
-
+    
     # req.List_inputsの要素をDeeplで翻訳
     # Deeplで翻訳されたリストをChatGPTに投げる
 
