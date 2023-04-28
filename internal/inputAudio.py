@@ -9,7 +9,7 @@ class RequestAudio:
         self.SAMPLERATE = 44100
         self.sprec = speech_recognition.Recognizer()
         self.IsInput = True
-        self.List_inputs = {}
+        self.List_inputs = []
 
 
     
@@ -21,19 +21,23 @@ class RequestAudio:
         try:
             audiodata = speech_recognition.AudioData(in_data,self.SAMPLERATE,2)
             sprec_text = self.sprec.recognize_google(audiodata, language='ja-JP')
-            print(sprec_text)
             self.List_inputs.append(sprec_text)
+            print(self.List_inputs)
+
         except speech_recognition.UnknownValueError:
             pass
         except speech_recognition.RequestError as e:
             pass
         finally:
             return (None, pyaudio.paContinue)
+        
+        
+        
 def IsPressEnter():
     return True
 
 def InputAudio(reqAudio):
-    audio = pyaudio.PyAudio() 
+    audio = pyaudio.PyAudio()     # Audio インスタンス取得
     stream = audio.open( format = pyaudio.paInt16,
                         rate = reqAudio.SAMPLERATE,
                         channels = 1, 
