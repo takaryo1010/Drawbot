@@ -5,6 +5,8 @@ def organizingAI(api_key, organization, inputs_translated):
     openai.api_key = api_key
     openai.organization = organization
     text = "You are a professional painter. Please output only the best picture image statement in a short sentence from the following words"
+    #prompt : あなたはプロの画家です。以下の言葉から、最適な絵のイメージ文だけを短文で出力してください。
+    
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
